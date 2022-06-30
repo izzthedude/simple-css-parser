@@ -36,4 +36,4 @@ for css_property in parse.keys():
     output += "}\n\n"
 
 with open("test.css", "w") as test:
-    test.write(output)
+    test.write(output[:-1])  # Ignore last double newline
