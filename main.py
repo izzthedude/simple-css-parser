@@ -19,7 +19,7 @@ for line in contents_lines:
         continue
 
     match = re.search(r"([\w-]*):\s?(.*);", line)
-    if match is not None:
+    if match is not None and not line.startswith("/*"):
         css_key = match.group(1)
         css_value = match.group(2)
         parse[css_property][css_key] = css_value
